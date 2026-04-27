@@ -14,6 +14,11 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background: #f5f5f5;
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -39,11 +44,9 @@ html {
 .marquee-container {
     width: 100%;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 100px 0;
     white-space: nowrap;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    margin: 60px 0;
+    margin: 4vh 0;
 }
 
 .marquee-content {
@@ -235,14 +238,14 @@ section:nth-child(5) {
 
 .nav-dock {
     position: relative;
-    background: rgba(15, 15, 15, 0.45);
+    background: rgba(15, 15, 15, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     padding: 8px;
     display: flex;
     align-items: center;
     gap: 48px;
-    box-shadow: 
+    box-shadow:
         0 40px 100px rgba(0, 0, 0, 0.5),
         inset 0 0 12px rgba(255, 255, 255, 0.1);
     padding-right: 8px;
@@ -740,4 +743,100 @@ footer {
     .main-wrapper {
         padding: 0 15px;
     }
+}
+
+/* Services Section V2 */
+.services-card-new {
+    min-height: 130vh;
+    background: linear-gradient(to bottom, #0a0a0a 0%, #0a0a0a 55%, #000000 55%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+    position: relative;
+    border-radius: 150px;
+    margin: 1.5vh auto;
+    width: 98%;
+    max-width: 1900px;
+    overflow: hidden;
+}
+
+.services-title {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.cards-stack {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-card {
+    position: absolute;
+    width: 230px;
+    height: 300px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.stack-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-left {
+    transform: translateX(-150px) perspective(1000px) rotateY(25deg) scale(0.85);
+    z-index: 1;
+    opacity: 0.4;
+    filter: blur(2px);
+}
+
+.card-center {
+    transform: translateX(0) perspective(1000px) rotateY(0deg) scale(1.1);
+    z-index: 3;
+    opacity: 1;
+    filter: blur(0);
+}
+
+.card-right {
+    transform: translateX(150px) perspective(1000px) rotateY(-25deg) scale(0.85);
+    z-index: 1;
+    opacity: 0.4;
+    filter: blur(2px);
+}
+
+.card-hidden {
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+    z-index: 0;
+}
+
+.service-label-pill {
+    background: #fff;
+    color: #000;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.service-label-pill span {
+    opacity: 0.5;
 }
