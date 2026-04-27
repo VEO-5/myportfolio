@@ -145,6 +145,8 @@ section:nth-child(5) {
     background: linear-gradient(to top, rgba(230, 230, 230, 0.4) 0%, transparent 100%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);
+    mask-image: linear-gradient(to bottom, transparent, black 40%);
     z-index: 3;
     pointer-events: none;
 }
