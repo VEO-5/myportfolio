@@ -760,6 +760,8 @@ footer {
     width: 98%;
     max-width: 1900px;
     overflow: hidden;
+    isolation: isolate;
+    z-index: 1;
 }
 
 .services-title {
