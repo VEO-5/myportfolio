@@ -343,6 +343,28 @@ section {
     height: 130vh;
 }
 
+.about-arrow {
+    position: absolute;
+    bottom: 0%;
+    left: 42%;
+    transform: translateX(-50%) rotateX(20deg) rotateY(-10deg) rotateZ(-15deg);
+    width: clamp(300px, 40vw, 550px);
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.45));
+    animation: floatingArrow 10s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatingArrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0) rotateX(20deg) rotateY(-10deg) rotateZ(-15deg);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-40px) rotateX(25deg) rotateY(-5deg) rotateZ(-10deg);
+    }
+}
+
 .about-section {
     display: grid;
     grid-template-columns: 0.8fr 1.5fr;
